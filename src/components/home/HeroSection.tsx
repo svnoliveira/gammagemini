@@ -1,9 +1,14 @@
+import { MainHeading } from "../ui/typography/MainHeading";
+import { WebsiteCarousel } from "./WebsiteCarousel";
+
 export const HeroSection = () => {
   return (
     <section className="text-center h-[80dvh]">
-      <h1 className="scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl">
-        Tenha uma página sua!
-      </h1>
+      <MainHeading>Tenha uma página sua!</MainHeading>
+      <section className="flex flex-row justify-end gap-6 mt-10">
+        <span>TEXTEXTEXTES</span>
+        <WebsiteCarousel />
+      </section>
     </section>
   );
 };

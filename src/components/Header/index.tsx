@@ -1,60 +1,20 @@
+"use server"
 import Image from "next/image";
-import {
-  NavigationMenu,
-  NavigationMenuItem,
-  NavigationMenuLink,
-  NavigationMenuList,
-  navigationMenuTriggerStyle,
-} from "../ui/navigation-menu";
-import Link from "next/link";
-import { ModeToggle } from "../ui/darkmode-button";
+import { Container } from "../ui/fragments/Container";
 
-export const Header = () => {
+export const Header = async () => {
   return (
-    <header className="flex flex-row justify-around items-end bg-main p-2">
+    <header className="bg-main">
+      <Container component="div" className="flex flex-row justify-start items-start p-2">
       <div className="border-2 border-border">
         <Image
           src={"/gammagemini.png"}
-          height={80}
-          width={80}
+          height={60}
+          width={60}
           alt="Gamma Genini logo"
         />
       </div>
-      <NavigationMenu>
-        <NavigationMenuList>
-          <NavigationMenuItem>
-            <Link href="/docs" legacyBehavior passHref>
-              <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                Websites
-              </NavigationMenuLink>
-            </Link>
-          </NavigationMenuItem>
-          <NavigationMenuItem>
-            <Link href="/docs" legacyBehavior passHref>
-              <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                Landing Pages
-              </NavigationMenuLink>
-            </Link>
-          </NavigationMenuItem>
-          <NavigationMenuItem>
-            <Link href="/docs" legacyBehavior passHref>
-              <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                Bancos de Dados
-              </NavigationMenuLink>
-            </Link>
-          </NavigationMenuItem>
-          <NavigationMenuItem>
-            <Link href="/docs" legacyBehavior passHref>
-              <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                Contato
-              </NavigationMenuLink>
-            </Link>
-          </NavigationMenuItem>
-          <NavigationMenuItem>
-            <ModeToggle />
-          </NavigationMenuItem>
-        </NavigationMenuList>
-      </NavigationMenu>
+    </Container>
     </header>
   );
 };
