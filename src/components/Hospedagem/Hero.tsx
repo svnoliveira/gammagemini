@@ -1,55 +1,56 @@
-import { Card, CardContent, CardDescription, CardFooter, CardHeader } from "../ui/card"
-import { MainHeading } from "../ui/typography/MainHeading"
+import { PriceCard } from "../ui/fragments/PriceCard";
+import { MainHeading } from "../ui/typography/MainHeading";
 
 export const HospedagemHero = () => {
-    return (
-        <section>
-            <MainHeading>Preços e Planos : Hospedagem</MainHeading>
-            <Card>
-                <CardHeader>Cloud Básico</CardHeader>
-                <CardDescription>Hospedagem em cloud.
-                </CardDescription>
-                    <CardContent>
-                        <p>Hospedagem simples essencial para iniciar!</p>
-                    </CardContent>
-                <CardFooter>69R$ / mes</CardFooter>
-            </Card>
-            <Card>
-                <CardHeader>Cloud Básico Database</CardHeader>
-                <CardDescription>Hospedagem em cloud com banco de dados.
-                </CardDescription>
-                    <CardContent>
-                        <p>Hospedagem inicial + API + Banco de dados.</p>
-                    </CardContent>
-                <CardFooter>99R$ / mes</CardFooter>
-            </Card>
-            <Card>
-                <CardHeader>Cloud Intermediário Database</CardHeader>
-                <CardDescription>Hospedagem em cloud com banco de dados.
-                </CardDescription>
-                    <CardContent>
-                        <p>Hospedagem avançada + API + Banco de dados.</p>
-                    </CardContent>
-                <CardFooter>99R$ / mes</CardFooter>
-            </Card>
-            <Card>
-                <CardHeader>Cloud Premium Database</CardHeader>
-                <CardDescription>Hospedagem em cloud com banco de dados.
-                </CardDescription>
-                    <CardContent>
-                        <p>Hospedagem alta performance + API + Banco de dados.</p>
-                    </CardContent>
-                <CardFooter>199R$ / mes</CardFooter>
-            </Card>
-            <Card>
-                <CardHeader>Cloud Dedicada</CardHeader>
-                <CardDescription>Hospedagem em cloud com banco de dados.
-                </CardDescription>
-                    <CardContent>
-                        <p>Hospedagem exclusiva, máxima performance e capacidade de acessos simultâneos.</p>
-                    </CardContent>
-                <CardFooter>349R$ / mes</CardFooter>
-            </Card>
-        </section>
-    )
-}
+  return (
+    <section className="mb-10 min-h-[85dvh]">
+      <div className="text-center py-8">
+        <MainHeading>Preços e Planos : Hospedagem</MainHeading>
+      </div>
+      <div className="flex flex-wrap justify-center gap-10">
+        <PriceCard
+          title="Cloud Básico"
+          description="Hospedagem em cloud."
+          content="Hospedagem simples essencial para iniciar!"
+          price={69}
+        />
+        <PriceCard
+          title="Cloud Intermediário"
+          description="Hospedagem em cloud."
+          content="Hospedagem com mais recursos e capacidade."
+          price={99}
+        />
+        <PriceCard
+          title="Cloud Premium"
+          description="Hospedagem em cloud."
+          content="Hospedagem com alta performance e recursos."
+          price={169}
+        />
+        <PriceCard
+          title="Cloud Básico Database"
+          description="Hospedagem em cloud com banco de dados."
+          content="Hospedagem inicial + API + Banco de dados."
+          price={99}
+        />
+        <PriceCard
+          title="Cloud Intermediário Database"
+          description="Hospedagem em cloud com banco de dados."
+          content="Hospedagem avançada + API + Banco de dados."
+          price={149}
+        />
+        <PriceCard
+          title="Cloud Premium Database"
+          description="Hospedagem em cloud com banco de dados."
+          content="Hospedagem alta performance + API + Banco de dados."
+          price={199}
+        />
+        <PriceCard
+          title="Cloud Dedicada"
+          description="Hospedagem em cloud com banco de dados."
+          content="Hospedagem exclusiva, máxima performance e capacidade de acessos simultâneos."
+          price={349}
+        />
+      </div>
+    </section>
+  );
+};

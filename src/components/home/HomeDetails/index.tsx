@@ -92,16 +92,24 @@ export const HomeDetails = () => {
                   <li className="border-b border-b-foreground/80 font-semibold list-none">
                     Next.js
                   </li>
-                  <li className="pt-3 text-sm">Feito com templates e moldes prontos</li>
+                  <li className="pt-3 text-sm">
+                    Feito com templates e moldes prontos
+                  </li>
                   <li className="pt-3 text-sm">Feito do zero, personalizado</li>
                   <li className="text-sm">Restrições e mensalidades extras</li>
-                  <li className="text-sm">Todas possibilidades em aberto sem custo adicional</li>
-                  <li className="text-sm">Lentidão por carregar elementos desnecessários</li>
+                  <li className="text-sm">
+                    Todas possibilidades em aberto sem custo adicional
+                  </li>
+                  <li className="text-sm">
+                    Lentidão por carregar elementos desnecessários
+                  </li>
                   <li className="text-sm">
                     Máxima peformance carregando apenas o ideal e sistema de
                     cache
                   </li>
-                  <li className="text-sm">Hospedagem de baixa qualidade, sujeita a virus</li>
+                  <li className="text-sm">
+                    Hospedagem de baixa qualidade, sujeita a virus
+                  </li>
                   <li className="text-sm">
                     Hospedagem na cloud (nuvem) utilizando as tecnologias mais
                     modernas
@@ -112,11 +120,12 @@ export const HomeDetails = () => {
           </div>
         </div>
         <div className="flex flex-col items-center gap-5 pt-2 pb-9">
-        <Button>Mande um email marcando uma entrevista</Button>
-        
-        <Button>
+          <a href="mailto:gammageminiweb@gmail.com">
+            <Button>Mande um email marcando uma entrevista</Button>
+          </a>
+          {/* <Button>
           responda um rápido questionário e nós entraremos em contato com você
-        </Button>
+        </Button> */}
         </div>
       </Container>
     </section>
