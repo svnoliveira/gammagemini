@@ -4,8 +4,8 @@ import { MainHeading } from "../ui/typography/MainHeading";
 
 export const DatabaseHero = () => {
   return (
-    <section className="mb-10 min-h-[85dvh]">
-      <div className="text-center py-8">
+    <section className="mb-10 min-h-[90dvh]">
+      <div className="text-center text-white py-8 backdrop-blur-md rounded-lg mb-5">
         <MainHeading>Preços e Planos : Bancos de Dados</MainHeading>
       </div>
       <div className="flex flex-wrap justify-center gap-10">

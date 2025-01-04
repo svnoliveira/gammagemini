@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://gammagemini.com
+
+# Sitemaps
+Sitemap: https://gammagemini.com/sitemap.xml
