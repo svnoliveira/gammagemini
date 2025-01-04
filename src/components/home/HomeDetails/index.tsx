@@ -49,7 +49,7 @@ export const HomeDetails = () => {
           <div>
             <Card className="max-w-2xl mx-auto">
               <CardHeader className="text-center text-xl italic">
-                "Como entro em contato?"
+                -Como entro em contato?
               </CardHeader>
               <CardContent>
                 <ul className="grid grid-cols-2 gap-0">
