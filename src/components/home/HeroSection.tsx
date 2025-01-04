@@ -6,7 +6,7 @@ import { ChevronsDown } from "lucide-react";
 
 export const HeroSection = () => {
   return (
-    <section className="text-center h-[80dvh] flex flex-col justify-evenly items-center gap-10">
+    <section className="text-center flex flex-col justify-evenly items-center gap-10">
       <section className="flex flex-col gap-6">
         <WebsiteCarousel />
         <MainHeading>Tenha um Endereço na Internet!</MainHeading>

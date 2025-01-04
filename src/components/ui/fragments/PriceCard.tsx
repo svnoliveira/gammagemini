@@ -23,7 +23,7 @@ export const PriceCard = ({
   host,
 }: IPriceCardProps) => {
   return (
-    <Card className="w-[350px] bg-background/90">
+    <Card className="w-[350px] bg-background/30 backdrop-blur-lg">
       <CardHeader className="font-semibold text-lg">
         {title}
         <CardDescription className="text-xs">{description}</CardDescription>

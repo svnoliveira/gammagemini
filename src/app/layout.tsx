@@ -18,7 +18,46 @@ const geistMono = localFont({
 
 export const metadata: Metadata = {
   title: "Gamma Gemini",
-  description: "Desenvolvimento de apps, sistemas e websites",
+  description: "Soluções completas de desenvolvimento web e hospedagem para empresas e profissionais criativos no Brasil.",
+  icons: {
+    icon: [
+      { rel: "apple-touch-icon", sizes: "180x180", url: "/apple-touch-icon.png" },
+      { rel: "icon", type: "image/png", sizes: "32x32", url: "/favicon-32x32.png" },
+      { rel: "icon", type: "image/png", sizes: "16x16", url: "/favicon-16x16.png" },
+    ],
+  },
+  manifest: "/site.webmanifest",
+  keywords: "desenvolvimento web, hospedagem, criação de API, integração de API, gerenciamento de banco de dados, portfólio online, artistas, prestadores de serviços, Brasil",
+  authors: [{ name: "Gamma Gemini" }],
+  robots: "index, follow",
+  openGraph: {
+    title: "Desenvolvimento Web e Hospedagem - Gamma Gemini",
+    description: "Soluções completas de desenvolvimento web e hospedagem para empresas e profissionais criativos no Brasil.",
+    type: "website",
+    url: "gammagemini.com",
+    images: [
+      {
+        url: "/share.png",
+      },
+    ],
+    locale: "pt_BR",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Desenvolvimento Web e Hospedagem - Gamma Gemini",
+    description: "Desenvolvimento web, APIs, e hospedagem para empresas e criativos no Brasil.",
+    images: {
+      url: "/share.png",
+    },
+    site: "@Gammageminiweb",
+  },
+  other: {
+    "geo.region": "BR",
+    "geo.placename": "Brasil",
+    "geo.position": "-15.779724;-47.929720",
+    "ICBM": "-15.779724, -47.929720",
+  },
+
 };
 
 export default function RootLayout({
@@ -39,7 +78,7 @@ export default function RootLayout({
       >
         <ThemeProvider
           attribute="class"
-          defaultTheme="system"
+          defaultTheme="dark"
           enableSystem
           disableTransitionOnChange
         >

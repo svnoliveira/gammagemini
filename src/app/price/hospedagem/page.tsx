@@ -5,7 +5,7 @@ export default function HospedagemPage() {
   return (
     <main
           className="relative bg-cover bg-center bg-no-repeat"
-          style={{ backgroundImage: "url('/backgrounds/host.png')" }}
+          style={{ backgroundImage: "url('/backgrounds/city.png')" }}
         >
           <div className="absolute inset-0 bg-background opacity-40 z-10">
           </div>
