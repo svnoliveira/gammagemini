@@ -1,11 +1,11 @@
 
-import { HeroSection } from "@/components/home/HeroSection";
+import { HomeDetails } from "@/components/home/HomeDetails";
 import { Container } from "@/components/ui/fragments/Container";
 
-export default function Home() {
+export default function HomeDetailsPage() {
   return (
     <Container component="main">
-      <HeroSection />
+      <HomeDetails />
     </Container>
   );
-}
+};

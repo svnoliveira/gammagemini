@@ -1,20 +1,33 @@
-"use server"
+"use server";
 import Image from "next/image";
 import { Container } from "../ui/fragments/Container";
+import { SubHeader } from "./SubHeader";
+import Link from "next/link";
 
 export const Header = async () => {
   return (
-    <header className="bg-main">
-      <Container component="div" className="flex flex-row justify-start items-start p-2">
-      <div className="border-2 border-border">
-        <Image
-          src={"/gammagemini.png"}
-          height={60}
-          width={60}
-          alt="Gamma Genini logo"
-        />
+    <header>
+      <div className="flex flex-row justify-start items-start p-2 bg-main">
+        <Container
+          component="div"
+          className="flex flex-row items-center w-full justify-between"
+        >
+          <Link href="/" legacyBehavior passHref>
+            <div className="flex flex-row items-center gap-3 cursor-pointer">
+              <Image
+                src={"/gammagemini-logo.png"}
+                height={60}
+                width={60}
+                alt="Gamma Genini logo"
+              />
+              <h1 className="text-white font-semibold text-2xl">
+                Gamma Gemini
+              </h1>
+            </div>
+          </Link>
+          <SubHeader />
+        </Container>
       </div>
-    </Container>
     </header>
   );
 };
