@@ -10,7 +10,7 @@ import { ModeToggle } from "../ui/darkmode-button";
 
 export const SubHeader = () => {
   return (
-    <section className="flex flex-col gap-1 px-3 items-center justify-end">
+    <section className="flex flex-col gap-1 px-3 items-center justify-end relative">
       <span className="text-white font-bold">Preços e planos:</span>
       <NavigationMenu>
         <NavigationMenuList>
@@ -38,7 +38,7 @@ export const SubHeader = () => {
           <ModeToggle />
         </NavigationMenuList>
       </NavigationMenu>
-      
+      <Link href={"/contact"} className="absolute -bottom-12 right-0 z-30 hover:underline">CONTATO</Link>
     </section>
   );
 };

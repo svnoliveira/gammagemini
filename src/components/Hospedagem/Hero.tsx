@@ -13,42 +13,42 @@ export const HospedagemHero = () => {
           description="Hospedagem em cloud."
           content="Hospedagem simples essencial para iniciar!"
           price={69}
+          perks={["1GB RAM", "4GB armazenamento", "30 usuários simultâneos"]}
         />
         <PriceCard
           title="Cloud Intermediário"
           description="Hospedagem em cloud."
           content="Hospedagem com mais recursos e capacidade."
           price={99}
+          perks={["2GB RAM", "10GB armazenamento", "100 usuários simultâneos"]}
         />
         <PriceCard
           title="Cloud Premium"
           description="Hospedagem em cloud."
           content="Hospedagem com alta performance e recursos."
           price={169}
+          perks={["4GB RAM", "20GB armazenamento", "300 usuários simultâneos"]}
         />
         <PriceCard
           title="Cloud Básico Database"
           description="Hospedagem em cloud com banco de dados."
           content="Hospedagem inicial + API + Banco de dados."
-          price={99}
+          price={139}
+          perks={["1GB RAM", "4GB armazenamento", "30 usuários simultâneos", "Banco de dados PostgreSQL"]}
         />
         <PriceCard
           title="Cloud Intermediário Database"
           description="Hospedagem em cloud com banco de dados."
           content="Hospedagem avançada + API + Banco de dados."
-          price={149}
+          price={199}
+          perks={["2GB RAM", "10GB armazenamento", "100 usuários simultâneos", "Banco de dados PostgreSQL"]}
         />
         <PriceCard
           title="Cloud Premium Database"
           description="Hospedagem em cloud com banco de dados."
           content="Hospedagem alta performance + API + Banco de dados."
-          price={199}
-        />
-        <PriceCard
-          title="Cloud Dedicada"
-          description="Hospedagem em cloud com banco de dados."
-          content="Hospedagem exclusiva, máxima performance e capacidade de acessos simultâneos."
           price={349}
+          perks={["4GB RAM", "20GB armazenamento", "300 usuários simultâneos", "Banco de dados PostgreSQL", "Manutenção 2hr semanais sem custo adicional"]}
         />
       </div>
     </section>
