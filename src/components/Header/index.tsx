@@ -7,10 +7,10 @@ import Link from "next/link";
 export const Header = async () => {
   return (
     <header>
-      <div className="flex flex-row justify-start items-start p-2 bg-main">
+      <div className="flex justify-start items-start p-2 bg-main">
         <Container
           component="div"
-          className="flex flex-row items-center w-full justify-between"
+          className="flex flex-col lg:flex-row items-center w-full justify-between"
         >
           <Link href="/" legacyBehavior passHref>
             <div className="flex flex-row items-center gap-3 cursor-pointer">
