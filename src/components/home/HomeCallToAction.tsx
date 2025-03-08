@@ -4,7 +4,7 @@ export const HomeCallToaction = () => {
   return (
     <>
       <div className="flex flex-row justify-center gap-4">
-        <a href="mailto:gammageminiweb@gmail.com" className="min-w-32">
+        <a href="/contact" className="min-w-32">
           <Button className="relative w-full bg-secondary text-secondary-foreground group rounded-none p-8">
             <p className="z-10 font-rmmono text-base">Entre em Contato</p>
             <span className="absolute w-[7px] h-[7px] bg-white transition-all duration-300 group-hover:w-[calc(100%-4px)] group-hover:h-[calc(100%-4px)] top-[-4px] left-[-4px] rounded-tl-lg"></span>
