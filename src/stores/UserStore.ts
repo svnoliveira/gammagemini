@@ -1,6 +1,6 @@
 import { create } from "zustand";
 import { adminStore } from "./AdminStore";
-import { IUserState, TToken } from "./@userTypes";
+import { ITokenDecoded, IUserState, TToken } from "./@userTypes";
 import { jwtDecode } from "jwt-decode";
 import { post } from "@/lib/fetchClient";
 
@@ -23,7 +23,7 @@ export const userStore = create<IUserState>()((set, get) => ({
         password,
       });
       const token = data.access;
-      const decoded: any = jwtDecode(token);
+      const decoded: ITokenDecoded = jwtDecode(token) || { user_id: -1 };
       const userID: number = decoded.user_id;
       const user = get().userList.find((userInfo) => userInfo.id === userID);
       if (!user) {
@@ -37,13 +37,9 @@ export const userStore = create<IUserState>()((set, get) => ({
       };
       set({ userData: new_userData });
       setMessage("Login success!");
-    } catch (error: any) {
+    } catch (error: unknown) {
       console.log(error);
-      setError(
-        error.message === "Usuário desativado"
-          ? "Usuário desativado"
-          : "Tentativa de login falhou"
-      );
+      setError("Tentativa de login falhou");
     } finally {
       setLoading(false);
       setTimeout(() => {

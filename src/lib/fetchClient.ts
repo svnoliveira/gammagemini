@@ -4,7 +4,7 @@ export const API_BASE_URL = "http://127.0.0.1:8000/api/";
 export async function request<T>(
   method: "GET" | "POST" | "PATCH" | "DELETE",
   url: string,
-  body?: any,
+  body?: unknown,
   token?: string
 ): Promise<T> {
   const options: RequestInit = {
@@ -27,9 +27,9 @@ export async function request<T>(
 
 export const get = <T>(url: string, token?: string) =>
   request<T>("GET", url, undefined, token);
-export const post = <T>(url: string, body: any, token?: string) =>
+export const post = <T>(url: string, body: unknown, token?: string) =>
   request<T>("POST", url, body, token);
-export const patch = <T>(url: string, body: any, token?: string) =>
+export const patch = <T>(url: string, body: unknown, token?: string) =>
   request<T>("PATCH", url, body, token);
 export const del = <T>(url: string, token?: string) =>
   request<T>("DELETE", url, undefined, token);

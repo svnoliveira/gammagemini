@@ -6,7 +6,7 @@ export interface IAdminState {
   adminDeleteModal: boolean;
   adminActiveUser: IUser | null;
   message: string;
-  error: any;
+  error: unknown;
   loading: boolean;
 
   setAdminAddModal: (boolean: boolean) => void;

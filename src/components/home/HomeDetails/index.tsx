@@ -1,4 +1,3 @@
-import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Container } from "@/components/ui/fragments/Container";
 import { ThinHeading } from "@/components/ui/typography/ThinHeading";
@@ -96,8 +95,12 @@ export const HomeDetails = () => {
                   <li className="pt-3 text-sm font-rmmono">
                     Feito com templates e moldes prontos
                   </li>
-                  <li className="pt-3 text-sm font-rmmono">Feito do zero, personalizado</li>
-                  <li className="text-sm font-rmmono">Restrições e mensalidades extras</li>
+                  <li className="pt-3 text-sm font-rmmono">
+                    Feito do zero, personalizado
+                  </li>
+                  <li className="text-sm font-rmmono">
+                    Restrições e mensalidades extras
+                  </li>
                   <li className="text-sm font-rmmono">
                     Todas possibilidades em aberto sem custo adicional
                   </li>
@@ -127,9 +130,8 @@ export const HomeDetails = () => {
         </Button> */}
         </div>
       </Container>
-      
+
       <WebsiteCarousel />
-      
     </section>
   );
 };

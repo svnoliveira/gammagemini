@@ -11,6 +11,10 @@ export interface TToken {
   refresh: string;
 }
 
+export interface ITokenDecoded {
+  user_id: number;
+}
+
 export interface IUserState {
   userData: { user: IUser | null; token: string };
   userList: IUser[];
