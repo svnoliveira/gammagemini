@@ -10,6 +10,7 @@ import {
 } from "@/components/ui/carousel";
 import { Card, CardContent } from "../ui/card";
 import Image from "next/image";
+import Link from "next/link";
 
 export function CarouselPlugin() {
   const plugin = React.useRef(
@@ -34,6 +35,7 @@ export function CarouselPlugin() {
       <CarouselContent>
         {Array.from({ length: 5 }).map((_, index) => (
           <CarouselItem key={index} className="flex items-center justify-center">
+            <Link href="http://svnoliveira.com/projects" passHref>
             <div className="p-1">
               <Card>
                 <CardContent className="flex aspect-video items-center justify-center p-6">
@@ -47,6 +49,7 @@ export function CarouselPlugin() {
                 </CardContent>
               </Card>
             </div>
+            </Link>
           </CarouselItem>
         ))}
       </CarouselContent>

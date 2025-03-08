@@ -2,14 +2,15 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Container } from "@/components/ui/fragments/Container";
 import { ThinHeading } from "@/components/ui/typography/ThinHeading";
-import { ThumbsDown, ThumbsUp } from "lucide-react";
 import Image from "next/image";
+import { HomeCallToaction } from "../HomeCallToAction";
+import { WebsiteCarousel } from "../WebsiteCarousel";
 
 export const HomeDetails = () => {
   return (
     <section>
       <Container component="div">
-        <div>
+        {/* <div>
           <div className="flex flex-col items-center py-11">
             <ThinHeading>
               Na era da comunicação digital, não passe mais apenas seu telefone,
@@ -67,7 +68,7 @@ export const HomeDetails = () => {
               </CardContent>
             </Card>
           </div>
-        </div>
+        </div> */}
         <div>
           <div className="flex flex-col items-center py-11">
             <ThinHeading>
@@ -81,36 +82,36 @@ export const HomeDetails = () => {
               className="rounded-md my-11"
             />
             <Card className="max-w-4xl mx-auto">
-              <CardHeader className="text-center text-xl italic">
-                Comparação entre wordpress e hospedagem convencional
+              <CardHeader className="text-center font-nippo text-xl italic uppercase">
+                Wordpress vs Next.JS
               </CardHeader>
               <CardContent>
                 <ul className="grid grid-cols-2 gap-0 list-disc">
-                  <li className="border-b border-b-foreground/80 font-semibold list-none">
+                  <li className="border-b border-b-foreground/80 font-nippo font-semibold list-none">
                     Wordpress
                   </li>
-                  <li className="border-b border-b-foreground/80 font-semibold list-none">
+                  <li className="border-b border-b-foreground/80 font-nippo font-semibold list-none">
                     Next.js
                   </li>
-                  <li className="pt-3 text-sm">
+                  <li className="pt-3 text-sm font-rmmono">
                     Feito com templates e moldes prontos
                   </li>
-                  <li className="pt-3 text-sm">Feito do zero, personalizado</li>
-                  <li className="text-sm">Restrições e mensalidades extras</li>
-                  <li className="text-sm">
+                  <li className="pt-3 text-sm font-rmmono">Feito do zero, personalizado</li>
+                  <li className="text-sm font-rmmono">Restrições e mensalidades extras</li>
+                  <li className="text-sm font-rmmono">
                     Todas possibilidades em aberto sem custo adicional
                   </li>
-                  <li className="text-sm">
+                  <li className="text-sm font-rmmono">
                     Lentidão por carregar elementos desnecessários
                   </li>
-                  <li className="text-sm">
+                  <li className="text-sm font-rmmono">
                     Máxima peformance carregando apenas o ideal e sistema de
                     cache
                   </li>
-                  <li className="text-sm">
+                  <li className="text-sm font-rmmono">
                     Hospedagem de baixa qualidade, sujeita a virus
                   </li>
-                  <li className="text-sm">
+                  <li className="text-sm font-rmmono">
                     Hospedagem na cloud (nuvem) utilizando as tecnologias mais
                     modernas
                   </li>
@@ -120,14 +121,15 @@ export const HomeDetails = () => {
           </div>
         </div>
         <div className="flex flex-col items-center gap-5 pt-2 pb-9">
-          <a href="mailto:gammageminiweb@gmail.com">
-            <Button>Mande um email marcando uma entrevista</Button>
-          </a>
+          <HomeCallToaction />
           {/* <Button>
           responda um rápido questionário e nós entraremos em contato com você
         </Button> */}
         </div>
       </Container>
+      
+      <WebsiteCarousel />
+      
     </section>
   );
 };
