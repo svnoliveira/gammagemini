@@ -16,11 +16,11 @@ export const Header = async () => {
             <div className="flex flex-row items-center gap-3 cursor-pointer">
               <Image
                 src={"/gammagemini-logo.png"}
-                height={60}
-                width={60}
+                height={20}
+                width={20}
                 alt="Gamma Genini logo"
               />
-              <h1 className="text-white font-semibold text-2xl">
+              <h1 className="text-white font-nippo font-semibold text-2xl">
                 Gamma Gemini
               </h1>
             </div>

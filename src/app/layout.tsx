@@ -15,6 +15,43 @@ const geistMono = localFont({
   variable: "--font-geist-mono",
   weight: "100 900",
 });
+const nippo = localFont({
+  src: "./fonts/Nippo-Variable.woff2",
+  variable: "--font-nippo",
+  weight: "200 600",
+});
+const RmMono = localFont({
+  src:  [
+    {
+      path: './fonts/rm/RMMono-Light.woff2',
+      weight: '300',
+      style: 'normal',
+    },
+    {
+      path: './fonts/rm/RMMono-Regular.woff2',
+      weight: '400',
+      style: 'normal',
+    },
+    {
+      path: './fonts/rm/RMMono-SemiBold.woff2',
+      weight: '600',
+      style: 'normal',
+    },
+    {
+      path: './fonts/rm/RMMono-Bold.woff2',
+      weight: '700',
+      style: 'normal',
+    },
+    {
+      path: './fonts/rm/RMMono-Black.woff2',
+      weight: '900',
+      style: 'normal',
+    },
+  ],
+  weight: "300 900",
+  variable: "--font-rm-mono",
+});
+
 
 export const metadata: Metadata = {
   title: "Gamma Gemini",
@@ -74,7 +111,7 @@ export default function RootLayout({
         <link rel="manifest" href="/site.webmanifest" />
       </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} ${RmMono.variable} ${nippo.variable} antialiased`}
       >
         <ThemeProvider
           attribute="class"
