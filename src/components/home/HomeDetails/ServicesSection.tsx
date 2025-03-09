@@ -7,7 +7,7 @@ export const ServicesSection = () => {
     <section>
       <div className="max-w-full lg:max-w-[70%] ml-auto">
         <p className="font-nippo font-light pl-[15px] sm:pl-0 text-1xl sm:text-2xl uppercase mb-3">
-          // serviços que podem solucionar seus problemas
+          {"//"} serviços que podem solucionar seus problemas
         </p>
         <Separator />
         <ul className="flex flex-col gap-4 mt-4">

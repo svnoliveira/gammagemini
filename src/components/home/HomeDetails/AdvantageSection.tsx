@@ -1,6 +1,5 @@
 import { HoverableLi } from "@/components/ui/fragments/HoverableLi";
 import { Paragraph } from "@/components/ui/typography/Paragraph";
-import { CircleCheckBig } from "lucide-react";
 import Image from "next/image";
 
 export const AdvantageSection = () => {

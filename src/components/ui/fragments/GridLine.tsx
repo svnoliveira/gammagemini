@@ -1,4 +1,3 @@
-import { number } from "zod";
 import { Separator } from "../separator";
 import { Paragraph } from "../typography/Paragraph";
 
