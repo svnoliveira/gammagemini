@@ -3,6 +3,7 @@ import { MainHeading } from "../ui/typography/MainHeading";
 import { HomeCallToaction } from "./HomeCallToAction";
 import { ChevronsDown } from "lucide-react";
 import { HomeDetails } from "./HomeDetails";
+import { Paragraph } from "../ui/typography/Paragraph";
 
 export const HeroSection = () => {
   return (
@@ -14,13 +15,15 @@ export const HeroSection = () => {
         <MainHeading>
           {"eficientes para o mundo moderno".toUpperCase()}
         </MainHeading>
-        <div className="flex flex-col gap-10 items-start pl-[15px]">
-          <div className="max-w-[450px] text-xl text-justify hyphens-auto font-rmmono font-medium">
+        <div className="flex flex-col gap-10 items-start">
+          <Paragraph className="max-w-[450px]">
             Criamos websites e sistemas modernos, sem moldes, sem templates, sem
             WordPress. Tudo sob medida, com as melhores práticas do mercado para
             desempenho, segurança e escalabilidade.
+          </Paragraph>
+          <div className="hidden md:block">
+            <HomeCallToaction />
           </div>
-          <HomeCallToaction />
         </div>
         <Link href="/home-details" legacyBehavior passHref>
           <div className="flex flex-col gap-2 items-center justify-center cursor-pointer">
