@@ -18,7 +18,7 @@ export const userStore = create<IUserState>()((set, get) => ({
   login: async (username, password) => {
     setLoading(true);
     try {
-      const data = await post<TToken>("auth/login/", {
+      const data = await post<TToken>("/login/", {
         username,
         password,
       });
@@ -51,5 +51,25 @@ export const userStore = create<IUserState>()((set, get) => ({
   logout: () => {
     localStorage.removeItem("@GGemini:token");
     set({ userData: { user: null, token: "" } });
+  },
+
+  loadUser: () => {
+    try {
+      let loggedUser = localStorage.getItem("@GGemini:token") || "";
+      if (loggedUser) {
+        loggedUser = loggedUser as string;
+        const decoded: ITokenDecoded = jwtDecode(loggedUser);
+        const userID: number = decoded.user_id;
+        const user = get().userList.find((userInfo) => userInfo.id === userID);
+        if (user) {
+          set({ userData: { user: user, token: loggedUser } });
+        } else {
+          get().logout();
+        }
+      }
+    } catch (error) {
+      console.error(error);
+      get().logout();
+    }
   },
 }));

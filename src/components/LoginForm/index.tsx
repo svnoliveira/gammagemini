@@ -14,8 +14,12 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
+import { IUser } from "@/stores/@userTypes";
+import { useEffect } from "react";
+import { userStore } from "@/stores/UserStore";
+import { redirect } from "next/navigation";
 
-export const LoginForm = () => {
+export const LoginForm = ({ users }: { users: IUser[] }) => {
   const form = useForm<TLoginForm>({
     resolver: zodResolver(loginFormSchema),
     defaultValues: {
@@ -23,9 +27,25 @@ export const LoginForm = () => {
       password: "",
     },
   });
+
+  const { setUserList, login, userData, loadUser } = userStore();
+
+  useEffect(() => {
+    setUserList(users);
+    loadUser();
+    if (userData.user) {
+      redirect("/admin/dashboard");
+    }
+  }, [users, setUserList, userData, loadUser]);
+
   function onSubmit(values: TLoginForm) {
-    console.log(values);
+    try {
+      login(values.username, values.password);
+    } catch (error) {
+      console.error(error);
+    }
   }
+
   return (
     <Form {...form}>
       <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">

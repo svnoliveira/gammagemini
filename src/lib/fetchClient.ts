@@ -1,5 +1,5 @@
 //export const API_BASE_URL = "http://api.gammagenini.com/api/";
-export const API_BASE_URL = "http://127.0.0.1:8000/api/";
+export const API_BASE_URL = "http://127.0.0.1:8000/api";
 
 export async function request<T>(
   method: "GET" | "POST" | "PATCH" | "DELETE",
@@ -25,7 +25,7 @@ export async function request<T>(
   return res.json();
 }
 
-export const get = <T>(url: string, token?: string) =>
+export const retrieve = <T>(url: string, token?: string) =>
   request<T>("GET", url, undefined, token);
 export const post = <T>(url: string, body: unknown, token?: string) =>
   request<T>("POST", url, body, token);

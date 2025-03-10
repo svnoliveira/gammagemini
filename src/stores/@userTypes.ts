@@ -3,7 +3,7 @@ export interface IUser {
   name: string;
   email: string;
   password: string;
-  isSuperUser: boolean;
+  is_superuser: boolean;
 }
 
 export interface TToken {
@@ -23,4 +23,5 @@ export interface IUserState {
   setUserList: (userList: IUser[]) => void;
   login: (username: string, password: string) => void;
   logout: () => void;
+  loadUser: () => void;
 }
