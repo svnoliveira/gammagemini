@@ -1,5 +1,6 @@
-//export const API_BASE_URL = "http://api.gammagenini.com/api/";
-export const API_BASE_URL = "http://127.0.0.1:8000/api";
+export const API_BASE_URL =
+  "https://webapp397901.ip-50-116-31-203.cloudezapp.io/api";
+//export const API_BASE_URL = "http://127.0.0.1:8000/api";
 
 export async function request<T>(
   method: "GET" | "POST" | "PATCH" | "DELETE",
