@@ -15,6 +15,7 @@ import {
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "../ui/textarea";
+import { contactStore } from "@/stores/ContactStore";
 
 export const ContactForm = () => {
   const form = useForm<TContactForm>({
@@ -26,8 +27,11 @@ export const ContactForm = () => {
       phone: "",
     },
   });
+
+  const { registerContact } = contactStore();
   function onSubmit(values: TContactForm) {
-    console.log(values);
+    registerContact(values);
+    form.reset();
   }
   return (
     <Form {...form}>
