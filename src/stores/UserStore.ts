@@ -22,21 +22,23 @@ export const userStore = create<IUserState>()((set, get) => ({
         username,
         password,
       });
-      const token = data.access;
-      const decoded: ITokenDecoded = jwtDecode(token) || { user_id: -1 };
-      const userID: number = decoded.user_id;
-      const user = get().userList.find((userInfo) => userInfo.id === userID);
-      if (!user) {
-        setError("User not found");
-        return;
+      if (data) {
+        const token = data.access;
+        const decoded: ITokenDecoded = jwtDecode(token) || { user_id: -1 };
+        const userID: number = decoded.user_id;
+        const user = get().userList.find((userInfo) => userInfo.id === userID);
+        if (!user) {
+          setError("User not found");
+          return;
+        }
+        localStorage.setItem("@GGemini:token", token);
+        const new_userData = {
+          token,
+          user,
+        };
+        set({ userData: new_userData });
+        setMessage("Login success!");
       }
-      localStorage.setItem("@GGemini:token", token);
-      const new_userData = {
-        token,
-        user,
-      };
-      set({ userData: new_userData });
-      setMessage("Login success!");
     } catch (error: unknown) {
       console.log(error);
       setError("Tentativa de login falhou");

@@ -15,8 +15,10 @@ export const contactStore = create<IContactState>()((set) => ({
     setLoading(true);
     try {
       const data = await post<IContact[]>("/contacts/", formData);
-      set({ contactList: data });
-      setMessage("Contato registtrado!");
+      if (data) {
+        set({ contactList: data });
+        setMessage("Contato registtrado!");
+      }
     } catch (error: unknown) {
       console.log(error);
       setError("Tentativa registro de contato falhou");
