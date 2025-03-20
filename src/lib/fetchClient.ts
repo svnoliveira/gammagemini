@@ -19,7 +19,6 @@ export async function request<T>(
   };
 
   try {
-    console.log("we're fetching");
     const res = await fetch(`${API_BASE_URL}${url}`, options);
 
     if (!res.ok) {
@@ -27,7 +26,7 @@ export async function request<T>(
     }
     return await res.json();
   } catch (error) {
-    console.log(error);
+    console.error(error);
     return false;
   }
 }

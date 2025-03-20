@@ -20,7 +20,7 @@ export const contactStore = create<IContactState>()((set) => ({
         setMessage("Contato registtrado!");
       }
     } catch (error: unknown) {
-      console.log(error);
+      console.error(error);
       setError("Tentativa registro de contato falhou");
     } finally {
       setLoading(false);

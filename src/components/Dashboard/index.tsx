@@ -20,9 +20,6 @@ export const Dashboard = () => {
   const { setUserList, userData, loadUser, logout, loadUserList } = userStore();
   const { setContactList, contactList, loadContactList } = contactStore();
 
-  console.log("-----------------------");
-  console.log(contactList);
-
   useEffect(() => {
     const loadLists = async () => {
       await loadUserList();

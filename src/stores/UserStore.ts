@@ -24,18 +24,18 @@ export const userStore = create<IUserState>()((set, get) => ({
       });
       if (data) {
         const token = data.access;
-        console.log("reached token", token);
+
         const decoded: ITokenDecoded = jwtDecode(token) || { user_id: -1 };
         const userID: number = decoded.user_id;
-        console.log("reached user", userID);
+
         const user = get().userList.find((userInfo) => userInfo.id === userID);
-        console.log("reached user data", user);
+
         if (!user) {
           setError("User not found");
           return;
         }
         localStorage.setItem("@GGemini:token", token);
-        console.log("reached post local storage");
+
         const new_userData = {
           token,
           user,
@@ -44,7 +44,7 @@ export const userStore = create<IUserState>()((set, get) => ({
         setMessage("Login success!");
       }
     } catch (error: unknown) {
-      console.log(error);
+      console.error(error);
       setError("Tentativa de login falhou");
     } finally {
       setLoading(false);
