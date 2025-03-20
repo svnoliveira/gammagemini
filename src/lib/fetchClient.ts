@@ -15,15 +15,17 @@ export async function request<T>(
       ...(token ? { Authorization: `Bearer ${token}` } : {}),
     },
     ...(body ? { body: JSON.stringify(body) } : {}),
+    //credentials: "include",
   };
 
   try {
+    console.log("we're fetching");
     const res = await fetch(`${API_BASE_URL}${url}`, options);
 
     if (!res.ok) {
       throw new Error(`Error ${res.status}: ${await res.text()}`);
     }
-    return res.json();
+    return await res.json();
   } catch (error) {
     console.log(error);
     return false;

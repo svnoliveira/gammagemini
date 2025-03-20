@@ -12,4 +12,5 @@ export interface IContactState {
   contactList: IContact[];
   setContactList: (contactList: IContact[]) => void;
   registerContact: (formData: TContactForm) => void;
+  loadContactList: () => Promise<void>;
 }

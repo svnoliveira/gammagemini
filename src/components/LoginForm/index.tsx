@@ -14,12 +14,11 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
-import { IUser } from "@/stores/@userTypes";
 import { useEffect } from "react";
 import { userStore } from "@/stores/UserStore";
 import { redirect } from "next/navigation";
 
-export const LoginForm = ({ users }: { users: IUser[] }) => {
+export const LoginForm = () => {
   const form = useForm<TLoginForm>({
     resolver: zodResolver(loginFormSchema),
     defaultValues: {
@@ -28,15 +27,21 @@ export const LoginForm = ({ users }: { users: IUser[] }) => {
     },
   });
 
-  const { setUserList, login, userData, loadUser } = userStore();
+  const { setUserList, login, userData, loadUser, loadUserList } = userStore();
 
   useEffect(() => {
-    setUserList(users);
-    loadUser();
+    const loadLists = async () => {
+      await loadUserList();
+    };
+
+    loadLists();
+    if (!userData.user) {
+      loadUser();
+    }
     if (userData.user) {
       redirect("/admin/dashboard");
     }
-  }, [users, setUserList, userData, loadUser]);
+  }, [setUserList, userData, loadUser, loadUserList]);
 
   function onSubmit(values: TLoginForm) {
     try {

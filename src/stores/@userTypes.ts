@@ -24,4 +24,5 @@ export interface IUserState {
   login: (username: string, password: string) => void;
   logout: () => void;
   loadUser: () => void;
+  loadUserList: () => Promise<void>;
 }

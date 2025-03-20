@@ -1,7 +1,5 @@
 "use client";
 
-import { IContact } from "@/stores/@contactTypes";
-import { IUser } from "@/stores/@userTypes";
 import { userStore } from "@/stores/UserStore";
 import { redirect } from "next/navigation";
 import { useEffect } from "react";
@@ -18,26 +16,34 @@ import {
 import { Button } from "../ui/button";
 import { contactStore } from "@/stores/ContactStore";
 
-export const Dashboard = ({
-  users,
-  contacts,
-}: {
-  users: IUser[];
-  contacts: IContact[];
-}) => {
-  const { setUserList, userData, loadUser, logout } = userStore();
-  const { setContactList, contactList } = contactStore();
+export const Dashboard = () => {
+  const { setUserList, userData, loadUser, logout, loadUserList } = userStore();
+  const { setContactList, contactList, loadContactList } = contactStore();
+
+  console.log("-----------------------");
+  console.log(contactList);
 
   useEffect(() => {
-    setUserList(users);
-    setContactList(contacts);
+    const loadLists = async () => {
+      await loadUserList();
+      await loadContactList();
+    };
+
+    loadLists();
     if (!userData.user) {
       loadUser();
     }
     if (!userData.user || !userData?.user?.is_superuser) {
       redirect("/admin");
     }
-  }, [users, setUserList, userData, loadUser, contacts, setContactList]);
+  }, [
+    setUserList,
+    userData,
+    loadUser,
+    setContactList,
+    loadContactList,
+    loadUserList,
+  ]);
 
   return (
     <section>

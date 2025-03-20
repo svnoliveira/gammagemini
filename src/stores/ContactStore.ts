@@ -1,6 +1,6 @@
 import { create } from "zustand";
 import { adminStore } from "./AdminStore";
-import { post } from "@/lib/fetchClient";
+import { post, retrieve } from "@/lib/fetchClient";
 import { IContact, IContactState } from "./@contactTypes";
 
 const setError = adminStore.getState().setError;
@@ -28,6 +28,17 @@ export const contactStore = create<IContactState>()((set) => ({
         setError("");
         setMessage("");
       }, 2000);
+    }
+  },
+
+  loadContactList: async () => {
+    try {
+      const data = await retrieve<IContact[]>("/contacts/");
+      if (data) {
+        set({ contactList: data });
+      }
+    } catch (error) {
+      console.error(error);
     }
   },
 }));
