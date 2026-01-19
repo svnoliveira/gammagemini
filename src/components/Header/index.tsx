@@ -12,7 +12,9 @@ export const Header = async () => {
           component="div"
           className="flex flex-col lg:flex-row items-center w-full justify-between"
         >
-          <Link href="/" legacyBehavior passHref>
+          <Link href="/">
+            {/* @next-codemod-error This Link previously used the now removed `legacyBehavior` prop, and has a child that might not be an anchor. The codemod bailed out of lifting the child props to the Link. Check that the child component does not render an anchor, and potentially move the props manually to Link. */
+            }
             <div className="flex flex-row items-center gap-3 cursor-pointer">
               <Image
                 src={"/gammagemini-logo.png"}

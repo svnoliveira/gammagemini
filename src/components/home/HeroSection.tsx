@@ -25,7 +25,9 @@ export const HeroSection = () => {
             <HomeCallToaction />
           </div>
         </div>
-        <Link href="/home-details" legacyBehavior passHref>
+        <Link href="/home-details">
+          {/* @next-codemod-error This Link previously used the now removed `legacyBehavior` prop, and has a child that might not be an anchor. The codemod bailed out of lifting the child props to the Link. Check that the child component does not render an anchor, and potentially move the props manually to Link. */
+          }
           <div className="flex flex-col gap-2 items-center justify-center cursor-pointer">
             <span className="text-sm hover:underline">Saiba Mais</span>
             <ChevronsDown size={18} />

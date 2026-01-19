@@ -42,7 +42,7 @@ export function CarouselPlugin() {
               key={index}
               className="flex items-center justify-center"
             >
-              <Link href="http://svnoliveira.com/projects" passHref>
+              <Link href="http://svnoliveira.com/projects">
                 <div className="p-1">
                   <Card>
                     <CardContent className="flex aspect-video items-center justify-center p-6">
