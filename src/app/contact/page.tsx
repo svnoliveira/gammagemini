@@ -7,7 +7,7 @@ export default function ContactPage() {
   return (
     <Container component="main">
       <div className="min-h-[90dvh] w-full flex flex-col-reverse lg:flex-row">
-        <div className="mt-10 flex flex-col items-center w-full lg:max-w-[50%] gap-8">
+        <div className="mt-10 mx-auto flex flex-col items-center w-full lg:max-w-[50%] gap-8">
           <a href="http://wa.me/5534991436020">
             <Image
               src="/contato.jpg"
@@ -37,12 +37,12 @@ export default function ContactPage() {
             </Button>
           </a>
         </div>
-        <div className="max-w-[28rem] mx-auto mt-10 gap-4 flex flex-col">
+        {/* <div className="max-w-[28rem] mx-auto mt-10 gap-4 flex flex-col">
           <h1 className="text-3xl font-nippo font-bold text-center">
             Marque uma reunião
           </h1>
           <ContactForm />
-        </div>
+        </div> */}
       </div>
     </Container>
   );
